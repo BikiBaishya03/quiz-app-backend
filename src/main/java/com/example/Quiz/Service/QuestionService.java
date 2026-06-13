@@ -13,8 +13,8 @@ public class QuestionService {
     @Autowired
     QuestionRepo questionRepo;
 
-    public List<QuizQuestion> getAllQuestion() {
-        return questionRepo.findAll();
+    public List<QuizQuestion> getAllQuestion(String category) {
+        return questionRepo.findByCategory(category);
     }
 
     public QuizQuestion saveQuestion(QuizQuestion question) {

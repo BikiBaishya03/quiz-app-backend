@@ -25,13 +25,13 @@ public class loginController {
             return "Login Successful";
         }
         else{
-            return "Invalid usernaem or Password";
+            return "Invalid username or Password";
         }
     }
 
-    @GetMapping("/questions")
-    public List<QuizQuestion> getquestion(){
-        return questionService.getAllQuestion();
+    @GetMapping("/questions/{category}")
+    public List<QuizQuestion> getQuestion(@PathVariable String category){
+        return questionService.getAllQuestion(category);
     }
 
     @PostMapping(value = "/save", consumes = "application/json", produces = "application/json")

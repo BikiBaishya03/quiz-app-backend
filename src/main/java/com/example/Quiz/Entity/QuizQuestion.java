@@ -15,6 +15,9 @@ public class QuizQuestion {
 
     private String correctAnswer;
 
+
+    private String category;
+
     @ElementCollection
     @CollectionTable(name = "question_options", joinColumns = @JoinColumn(name = "question_id"))
     @Column(name = "option_text")
@@ -51,4 +54,13 @@ public class QuizQuestion {
     public void setQuestionOptions(List<String> questionOptions) {
         this.questionOptions = questionOptions;
     }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
 }
